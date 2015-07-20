@@ -8,7 +8,6 @@ var RatpackServer = Packages.ratpack.server.RatpackServer;
 
 require('renderWorld.js');
 require('renderName.js');
-require('renderName.js');
 
 RatpackServer.start(function (server) { server 
   .handlers(function (chain) { 
