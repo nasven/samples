@@ -6,11 +6,15 @@
  */
 var RatpackServer = Packages.ratpack.server.RatpackServer;
 
+require('renderWorld.js');
+require('renderName.js');
+require('renderName.js');
+
 RatpackServer.start(function (server) { server 
   .handlers(function (chain) { 
      chain
-    .get(function(ctx){load('renderWorld.js')(ctx);})
-    .get(":name",function(ctx){load('renderName.js')(ctx);});
+    .get(function(ctx){renderWorld(ctx);})
+    .get(":name",function(ctx){renderName(ctx);});
   })
 });
 

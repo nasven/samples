@@ -1,4 +1,5 @@
-function(ctx) {
-  print('Rendering Hello World');
-  ctx.render("[${__FILE__}] Hello World!");
+function renderWorld(ctx) {
+  var message = 'Hello World!';
+  print(message);
+  ctx.render("[renderWorld] ${message}\n");
 }

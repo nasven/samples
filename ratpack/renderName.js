@@ -1,5 +1,5 @@
-function(ctx) {
+function renderName(ctx) {
   var name = ctx.getPathTokens().get("name");
-  print("Rendering Hello ${name}");
-  ctx.render("[${__FILE__}] Hello <${name}>!");
+  print("Hello ${name}");
+  ctx.render("[renderName] Hello <${name}>!\n");
 }
