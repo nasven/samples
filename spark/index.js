@@ -2,10 +2,12 @@
  * Author: Bruno Borges (@brunoborges)
  * Since: 2015
  */
-var Spark = Packages.spark.Spark;
-Spark.get("/", function(req, res) { 
-  load('process.js');
-  return process(req, res);
-});
+var Spark = Java.type("spark.Spark");
+
+var books = new java.util.HashMap();
+
+Nasven.require("hack.js");
+Nasven.require("process.js");
+Nasven.require("routes.js");
 
 Nasven.daemon();

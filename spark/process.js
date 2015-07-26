@@ -1,3 +1,3 @@
 function process(req, res) {
-  return "Hello Spark";
+  return "Hello Spark!";
 }
