@@ -1,0 +1,11 @@
+{
+    "name": "jdbc",
+    "version": "1.0.0",
+    "keywords": ["jdbc", "nashorn"],
+    "author": "@lukaseder",
+    "contributors": [],
+    "dependencies": {
+        "maven": ["com.h2database:h2:1.4.186"]
+    },
+    "engine": "nashorn 1.8.0_51"
+}
