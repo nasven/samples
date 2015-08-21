@@ -1,0 +1,11 @@
+{
+    "name": "twitter4j",
+    "version": "1.0.0",
+    "keywords": ["nashorn", "twitter"],
+    "options": "-scripting",
+    "author": "@brunoborges",
+    "engine": "nashorn 1.8.0_45",
+    "dependencies": {
+      "maven": ["org.twitter4j:twitter4j-core:[4.0,)"]
+    }
+}

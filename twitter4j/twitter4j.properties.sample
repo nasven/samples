@@ -1,0 +1,11 @@
+# Twitter4J Configuration
+# -----------------------
+# Fore more information, visit: http://twitter4j.org/en/configuration.html
+#
+debug=false
+oauth.consumerKey=
+oauth.consumerSecret=
+oauth.accessToken=
+oauth.accessTokenSecret=
+http.proxyHost=
+http.proxyPort=
