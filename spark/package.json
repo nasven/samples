@@ -5,7 +5,7 @@
     "author": "@brunoborges",
     "contributors": [],
     "dependencies": {
-        "maven": ["com.sparkjava:spark-core:2.2"]
+        "maven": ["com.sparkjava:spark-core:2.3"]
     },
     "engine": "nashorn 1.8.0_45"
 }

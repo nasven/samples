@@ -5,6 +5,9 @@ var get = Spark.get;
 var post = Spark.post;
 var random = new java.util.Random();
 
+Spark.setPort(8080);
+Spark.staticFileLocation("/static");
+
 // Make sure Spark is stopped before defining routes (in case of reload)
 stop();
 
