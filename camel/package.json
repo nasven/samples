@@ -1,0 +1,14 @@
+{
+    "name": "camel",
+    "version": "1.0.0",
+    "keywords": ["camel", "eip", "nashorn"],
+    "author": "@dasniko",
+    "contributors": [],
+    "dependencies": {
+        "maven": [
+            "org.apache.camel:camel-core:2.16.0",
+            "org.slf4j:slf4j-simple:1.7.12"
+        ]
+    },
+    "engine": "nashorn 1.8.0_45"
+}
