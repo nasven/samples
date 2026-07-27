@@ -1,11 +1,15 @@
 {
-    "name": "twitter4j",
-    "version": "1.0.0",
-    "keywords": ["nashorn", "twitter"],
-    "options": "-scripting",
-    "author": "@brunoborges",
-    "engine": "nashorn 1.8.0_45",
-    "dependencies": {
-      "maven": ["org.twitter4j:twitter4j-core:[4.0,)"]
-    }
+  "name": "twitter4j",
+  "version": "2.0.0",
+  "description": "Validate Twitter4J configuration with opt-in live API access",
+  "main": "index.js",
+  "keywords": ["nasven", "graaljs", "twitter", "twitter4j"],
+  "author": "@brunoborges",
+  "engines": {
+    "java": ">=25",
+    "nasven": ">=2"
+  },
+  "dependencies": {
+    "maven": ["org.twitter4j:twitter4j-core:4.1.2"]
+  }
 }

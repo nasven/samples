@@ -1,20 +1,17 @@
-/**
- * This is a sample application of Ratpack.IO using Nashorn. 
- *
- * Author: Bruno Borges (@brunoborges)
- * Since: 2015
- */
-var RatpackServer = Packages.ratpack.server.RatpackServer;
+const System = Java.type("java.lang.System");
+const Paths = Java.type("java.nio.file.Paths");
+const RatpackServer = Java.type("ratpack.core.server.RatpackServer");
 
-require('renderWorld.js');
-require('renderName.js');
+const configuredPort = System.getenv("NASVEN_PORT");
+const port = configuredPort === null ? 8080 : Number(configuredPort);
 
-RatpackServer.start(function (server) { server 
-  .handlers(function (chain) { 
-     chain
-    .get(function(ctx){renderWorld(ctx);})
-    .get(":name",function(ctx){renderName(ctx);});
-  })
+RatpackServer.start((server) => {
+  server
+    .serverConfig((config) => config
+      .baseDir(Paths.get("public").toAbsolutePath())
+      .port(port))
+    .handlers((chain) => chain.files((files) => files.indexFiles("index.html")));
 });
 
+print("Ratpack listening on http://127.0.0.1:" + port);
 Nasven.daemon();

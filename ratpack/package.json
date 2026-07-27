@@ -1,13 +1,16 @@
 {
-    "name": "ratpack",
-    "version": "1.0.0",
-    "keywords": ["ratpack", "nashorn"],
-    "author": "@brunoborges",
-    "contributors": [],
-    "options": "-scripting",
-    "dependencies": {
-        "maven": ["org.slf4j:slf4j-simple:1.7.10",
-                 "io.ratpack:ratpack-core:0.9.19"]
-    },
-    "engine": "nashorn 1.8.0_45"
+  "name": "ratpack",
+  "version": "2.0.0",
+  "description": "Serve static content with Ratpack",
+  "main": "index.js",
+  "keywords": ["nasven", "graaljs", "ratpack", "http"],
+  "author": "@brunoborges",
+  "contributors": [],
+  "engines": {
+    "java": ">=25",
+    "nasven": ">=2"
+  },
+  "dependencies": {
+    "maven": ["io.ratpack:ratpack-core:2.0.0-rc-1"]
+  }
 }

@@ -1,11 +1,10 @@
-# Twitter4J Configuration
-# -----------------------
-# Fore more information, visit: http://twitter4j.org/en/configuration.html
+# Live Twitter4J mode uses environment variables rather than a credentials file:
 #
-debug=false
-oauth.consumerKey=
-oauth.consumerSecret=
-oauth.accessToken=
-oauth.accessTokenSecret=
-http.proxyHost=
-http.proxyPort=
+# NASVEN_TWITTER_LIVE=true
+# TWITTER_OAUTH_CONSUMER_KEY=
+# TWITTER_OAUTH_CONSUMER_SECRET=
+# TWITTER_OAUTH_ACCESS_TOKEN=
+# TWITTER_OAUTH_ACCESS_TOKEN_SECRET=
+#
+# Without NASVEN_TWITTER_LIVE=true, the sample performs deterministic
+# no-credential validation and does not contact Twitter.

@@ -1,7 +1,11 @@
 /**
  * Author: Bruno Borges (@brunoborges)
- * Since: 2015
+ * Updated for GraalJS ES2024.
  */
-print("Hello Nashorn Maven Executor");
-print(arguments);
-print(arguments[0]);
+const suppliedArguments = Array.from(arguments);
+
+console.log("Hello from Nasven on GraalJS");
+console.log("Arguments: " + JSON.stringify(suppliedArguments));
+if (suppliedArguments.length > 0) {
+  console.log("First argument: " + suppliedArguments[0]);
+}

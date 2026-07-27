@@ -1,11 +1,16 @@
 {
-    "name": "jetty",
-    "version": "1.0.0",
-    "keywords": ["jetty", "nashorn"],
-    "author": "@brunoborges",
-    "contributors": [],
-    "dependencies": {
-        "maven": ["org.eclipse.jetty:jetty-server:9.3.0.M2"]
-    },
-    "engine": "nashorn 1.8.0_45"
+  "name": "jetty",
+  "version": "2.0.0",
+  "description": "Serve static content with Eclipse Jetty",
+  "main": "index.js",
+  "keywords": ["nasven", "graaljs", "jetty", "http"],
+  "author": "@brunoborges",
+  "contributors": [],
+  "engines": {
+    "java": ">=25",
+    "nasven": ">=2"
+  },
+  "dependencies": {
+    "maven": ["org.eclipse.jetty:jetty-server:12.1.11"]
+  }
 }

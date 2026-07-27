@@ -1,13 +1,15 @@
-/**
- * Author: Bruno Borges (@brunoborges)
- * Since: 2015
- */
-var Spark = Java.type("spark.Spark");
+const Paths = Java.type("java.nio.file.Paths");
+const System = Java.type("java.lang.System");
+const Spark = Java.type("spark.Spark");
 
-var books = new java.util.HashMap();
+const configuredPort = System.getenv("NASVEN_PORT");
+const port = configuredPort === null ? 8080 : Number(configuredPort);
+const publicDirectory = Paths.get("public").toAbsolutePath().toString();
 
-Nasven.require("hack.js");
-Nasven.require("process.js");
-Nasven.require("routes.js");
+Spark.port(port);
+Spark.staticFiles.externalLocation(publicDirectory);
+Spark.init();
+Spark.awaitInitialization();
 
+print("Spark listening on http://127.0.0.1:" + port);
 Nasven.daemon();

@@ -1,14 +1,20 @@
 {
-    "name": "camel",
-    "version": "1.0.0",
-    "keywords": ["camel", "eip", "nashorn"],
-    "author": "@dasniko",
-    "contributors": [],
-    "dependencies": {
-        "maven": [
-            "org.apache.camel:camel-core:2.16.0",
-            "org.slf4j:slf4j-simple:1.7.12"
-        ]
-    },
-    "engine": "nashorn 1.8.0_45"
+  "name": "camel",
+  "version": "2.0.0",
+  "description": "Process a local file with an Apache Camel route",
+  "main": "index.js",
+  "keywords": ["nasven", "graaljs", "camel", "eip"],
+  "author": "@dasniko",
+  "contributors": [],
+  "engines": {
+    "java": ">=25",
+    "nasven": ">=2"
+  },
+  "dependencies": {
+    "maven": [
+      "org.apache.camel:camel-main:4.21.0",
+      "org.apache.camel:camel-file:4.21.0",
+      "org.apache.camel:camel-direct:4.21.0"
+    ]
+  }
 }

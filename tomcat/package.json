@@ -1,12 +1,16 @@
 {
-    "name": "tomcat",
-    "version": "1.0.0",
-    "keywords": ["tomcat", "nashorn"],
-    "author": "@brunoborges",
-    "contributors": [],
-    "dependencies": {
-        "maven": ["org.apache.tomcat.embed:tomcat-embed-core:8.0.21"
-                    , "org.apache.tomcat.embed:tomcat-embed-logging-juli:8.0.21"]
-    },
-    "engine": "nashorn 1.8.0_45"
+  "name": "tomcat",
+  "version": "2.0.0",
+  "description": "Serve a local web application with embedded Tomcat",
+  "main": "index.js",
+  "keywords": ["nasven", "graaljs", "tomcat", "http"],
+  "author": "@brunoborges",
+  "contributors": [],
+  "engines": {
+    "java": ">=25",
+    "nasven": ">=2"
+  },
+  "dependencies": {
+    "maven": ["org.apache.tomcat.embed:tomcat-embed-core:11.0.24"]
+  }
 }

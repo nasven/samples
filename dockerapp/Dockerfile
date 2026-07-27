@@ -1,4 +1,8 @@
-FROM nasven/nasven.js
+ARG NASVEN_IMAGE=nasven.js-local
+FROM ${NASVEN_IMAGE}
 
-RUN nasven.js -DnasvenNoRun=true -- /nasven/samples/spark && \
-    ln -s /nasven/samples/spark /app
+COPY spark /app
+RUN NASVEN_NORUN=true /opt/nasven/nasven /app
+
+EXPOSE 8080
+CMD ["/app"]
