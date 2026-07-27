@@ -14,8 +14,7 @@
     "maven": [
       "org.apache.camel:camel-main:4.21.0",
       "org.apache.camel:camel-file:4.21.0",
-      "org.apache.camel:camel-direct:4.21.0",
-      "org.slf4j:slf4j-simple:2.0.18"
+      "org.apache.camel:camel-direct:4.21.0"
     ]
   }
 }

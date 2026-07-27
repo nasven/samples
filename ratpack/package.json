@@ -11,9 +11,6 @@
     "nasven": ">=2"
   },
   "dependencies": {
-    "maven": [
-      "io.ratpack:ratpack-core:2.0.0-rc-1",
-      "org.slf4j:slf4j-nop:1.7.36"
-    ]
+    "maven": ["io.ratpack:ratpack-core:2.0.0-rc-1"]
   }
 }
