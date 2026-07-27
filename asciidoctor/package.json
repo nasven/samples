@@ -1,10 +1,18 @@
 {
-    "name": "asciidoctor",
-    "version": "1.0.0",
-    "keywords": ["nashorn"],
-    "author": "@brunoborges",
-    "dependencies": {
-        "maven": ["org.asciidoctor:asciidoctorj:1.5.2", "org.slf4j:slf4j-simple:1.7.12"]
-    },
-    "engine": "nashorn 1.8.0_45"
+  "name": "asciidoctor",
+  "version": "2.0.0",
+  "description": "Render AsciiDoc with AsciidoctorJ from GraalJS",
+  "main": "index.js",
+  "keywords": ["nasven", "graaljs", "asciidoctor"],
+  "author": "@brunoborges",
+  "engines": {
+    "java": ">=25",
+    "nasven": ">=2"
+  },
+  "dependencies": {
+    "maven": [
+      "org.jruby:jruby-complete:9.4.14.0",
+      "org.asciidoctor:asciidoctorj:3.0.1"
+    ]
+  }
 }

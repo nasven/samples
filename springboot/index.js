@@ -1,43 +1,37 @@
-var GenericBeanDefinition = Packages.org.springframework.beans.factory.support.GenericBeanDefinition;
-var MutablePropertyValues = Packages.org.springframework.beans.MutablePropertyValues;
-var HashMap = Packages.java.util.HashMap;
-var SimpleUrlHandlerMapping = Packages.org.springframework.web.servlet.handler.SimpleUrlHandlerMapping;
-var SpringApplication = Packages.org.springframework.boot.SpringApplication;
-var Controller = Packages.org.springframework.web.servlet.mvc.Controller;
+const System = Java.type("java.lang.System");
+const HashMap = Java.type("java.util.HashMap");
+const SpringApplication = Java.type("org.springframework.boot.SpringApplication");
+const ServletWebServerFactoryAutoConfiguration = Java.type(
+  "org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryAutoConfiguration"
+);
+const DispatcherServletAutoConfiguration = Java.type(
+  "org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration"
+);
+const WebMvcAutoConfiguration = Java.type(
+  "org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration"
+);
+const ErrorMvcAutoConfiguration = Java.type(
+  "org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration"
+);
 
-var MainController = new Controller() {
-  handleRequest: function(request, response) {
-    new MappingJackson2HttpMessageConverter().write(RESPONSE, MediaType.APPLICATION_JSON, new ServletServerHttpResponse(response));
-    return null;
-  }
-}
-
-var BOOT_CLASSES = Java.to([
-      MainController.getClass().class,
-      Packages.org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration.class,
-      Packages.org.springframework.boot.autoconfigure.MessageSourceAutoConfiguration.class,
-      Packages.org.springframework.boot.autoconfigure.PropertyPlaceholderAutoConfiguration.class,
-      Packages.org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration.class,
-      Packages.org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration.class,
-      Packages.org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration.class,
-      Packages.org.springframework.boot.autoconfigure.web.MultipartAutoConfiguration.class,
-      Packages.org.springframework.boot.autoconfigure.web.ServerPropertiesAutoConfiguration.class,
-      Packages.org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration.class,
+const configuredPort = System.getenv("NASVEN_PORT");
+const port = configuredPort === null ? 8080 : Number(configuredPort);
+const sources = Java.to([
+  ServletWebServerFactoryAutoConfiguration.class,
+  DispatcherServletAutoConfiguration.class,
+  WebMvcAutoConfiguration.class,
+  ErrorMvcAutoConfiguration.class
 ], "java.lang.Class[]");
 
-app = new SpringApplication(BOOT_CLASSES);
-app.addInitializers(function(applicationContext) {
-      var definition = new GenericBeanDefinition();
-      var values = new MutablePropertyValues();
-      var urls = new HashMap();
-      urls.put("/main*", "mainController");
-      values.add("urlMap", urls);
-      values.add("order", 0);
-      definition.setPropertyValues(values);
-      definition.setBeanClass(SimpleUrlHandlerMapping.class);
-      var beanFactory = applicationContext.getBeanFactory();
-      beanFactory.registerBeanDefinition("mainUrlMapping", definition);
-    });
-app.run();
+const properties = new HashMap();
+properties.put("server.address", "127.0.0.1");
+properties.put("server.port", String(port));
+properties.put("spring.main.banner-mode", "off");
+properties.put("spring.web.resources.static-locations", "file:./public/");
 
-daemon();
+const application = new SpringApplication(sources);
+application.setDefaultProperties(properties);
+application.run(Java.to([], "java.lang.String[]"));
+
+print("Spring Boot listening on http://127.0.0.1:" + port);
+Nasven.daemon();

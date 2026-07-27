@@ -1,12 +1,13 @@
-var Paths = Packages.java.nio.file.Paths;
-var Files = Packages.java.nio.file.Files;
-var Factory = Packages.org.asciidoctor.Asciidoctor.Factory;
-var Asciidoctor = Packages.org.asciidoctor.Asciidoctor;
-var OptionsBuilder = Packages.org.asciidoctor.OptionsBuilder;
+const Files = Java.type("java.nio.file.Files");
+const Paths = Java.type("java.nio.file.Paths");
+const Asciidoctor = Java.type("org.asciidoctor.Asciidoctor");
+const Options = Java.type("org.asciidoctor.Options");
 
-var sample = new java.lang.String(Files.readAllBytes(Paths.get("mysample.adoc")));
+const source = Files.readString(Paths.get("mysample.adoc"));
+const asciidoctor = Asciidoctor.Factory.create();
 
-var asciidoctor = Factory.create(Factory.class.getClassLoader());
-var html = asciidoctor.convert(sample, OptionsBuilder.options().get());
-
-print(html);
+try {
+  print(asciidoctor.convert(source, Options.builder().build()));
+} finally {
+  asciidoctor.shutdown();
+}

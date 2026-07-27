@@ -1,16 +1,25 @@
-var Paths = Packages.java.nio.file.Paths;
-var Charset = Packages.java.nio.charset.Charset;
-var commons_csv = new JavaImporter(org.apache.commons.csv);
+const Paths = Java.type("java.nio.file.Paths");
+const StandardCharsets = Java.type("java.nio.charset.StandardCharsets");
+const CSVFormat = Java.type("org.apache.commons.csv.CSVFormat");
+const CSVParser = Java.type("org.apache.commons.csv.CSVParser");
 
-with (commons_csv) {
-  var charset = Charset.forName("US-ASCII");
-  var file = Paths.get("sample.csv").toFile();
-  var format = CSVFormat.EXCEL.withHeader().withIgnoreSurroundingSpaces();
-  var records = CSVParser.parse(file, charset, format);
-  for each (record in records) {
-    var _date = record.get("Date");
-    var _close = record.get("Close");
-    var _volume = record.get("Volume");
-    print("Date: ${_date}, Close: ${_close}, Volume: ${_volume}");
+const format = CSVFormat.DEFAULT.builder()
+  .setHeader()
+  .setSkipHeaderRecord(true)
+  .setIgnoreSurroundingSpaces(true)
+  .get();
+const parser = CSVParser.parse(
+  Paths.get("sample.csv").toFile(),
+  StandardCharsets.US_ASCII,
+  format
+);
+
+try {
+  for (const record of parser) {
+    print("Date: " + record.get("Date") +
+      ", Close: " + record.get("Close") +
+      ", Volume: " + record.get("Volume"));
   }
+} finally {
+  parser.close();
 }

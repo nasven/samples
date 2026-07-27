@@ -1,11 +1,16 @@
 {
-    "name": "springboot",
-    "version": "1.0.0",
-    "keywords": ["springboot", "nashorn"],
-    "author": "@brunoborges",
-    "contributors": [],
-    "dependencies": {
-        "maven": ["org.springframework.boot:spring-boot-starter-web:1.2.3.RELEASE"]
-    },
-    "engine": "nashorn 1.8.0_45"
+  "name": "springboot",
+  "version": "2.0.0",
+  "description": "Serve static content with Spring Boot",
+  "main": "index.js",
+  "keywords": ["nasven", "graaljs", "springboot", "http"],
+  "author": "@brunoborges",
+  "contributors": [],
+  "engines": {
+    "java": ">=25",
+    "nasven": ">=2"
+  },
+  "dependencies": {
+    "maven": ["org.springframework.boot:spring-boot-starter-web:3.5.16"]
+  }
 }

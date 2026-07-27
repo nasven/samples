@@ -1,10 +1,19 @@
 {
-    "name": "csv",
-    "version": "1.0.0",
-    "keywords": ["nashorn"],
-    "author": "@brunoborges",
-    "dependencies": {
-        "maven": ["org.apache.commons:commons-csv:1.1"]
-    },
-    "engine": "nashorn 1.8.0_45"
+  "name": "csv",
+  "version": "2.0.0",
+  "description": "Read market data with Apache Commons CSV",
+  "main": "index.js",
+  "keywords": ["nasven", "graaljs", "csv"],
+  "author": "@brunoborges",
+  "engines": {
+    "java": ">=25",
+    "nasven": ">=2"
+  },
+  "dependencies": {
+    "maven": [
+      "org.apache.commons:commons-csv:1.14.1",
+      "commons-io:commons-io:2.20.0",
+      "commons-codec:commons-codec:1.19.0"
+    ]
+  }
 }

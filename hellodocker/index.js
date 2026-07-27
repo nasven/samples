@@ -1,5 +1,5 @@
 /**
  * Author: Bruno Borges (@brunoborges)
- * Since: 2015
+ * Updated for GraalJS ES2024.
  */
-print("Hello Nashorn Maven Executor from Docker Container");
+console.log("Hello Nasven from a Docker container");

@@ -1,11 +1,16 @@
 {
-    "name": "jdbc",
-    "version": "1.0.0",
-    "keywords": ["jdbc", "nashorn"],
-    "author": "@lukaseder",
-    "contributors": [],
-    "dependencies": {
-        "maven": ["com.h2database:h2:1.4.186"]
-    },
-    "engine": "nashorn 1.8.0_51"
+  "name": "jdbc",
+  "version": "2.0.0",
+  "description": "Query an isolated H2 database through JDBC",
+  "main": "index.js",
+  "keywords": ["nasven", "graaljs", "jdbc", "h2"],
+  "author": "@lukaseder",
+  "contributors": [],
+  "engines": {
+    "java": ">=25",
+    "nasven": ">=2"
+  },
+  "dependencies": {
+    "maven": ["com.h2database:h2:2.4.240"]
+  }
 }

@@ -1,7 +1,12 @@
 {
-    "name": "helloworld",
-    "version": "1.0.0",
-    "keywords": ["nashorn"],
-    "author": "@brunoborges",
-    "engine": "nashorn 1.8.0_45"
+  "name": "helloworld",
+  "version": "2.0.0",
+  "description": "Minimal GraalJS application with command-line arguments",
+  "main": "index.js",
+  "keywords": ["nasven", "graaljs"],
+  "author": "@brunoborges",
+  "engines": {
+    "java": ">=25",
+    "nasven": ">=2"
+  }
 }
