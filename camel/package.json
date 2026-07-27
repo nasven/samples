@@ -13,26 +13,9 @@
   "dependencies": {
     "maven": [
       "org.apache.camel:camel-main:4.21.0",
-      "org.apache.camel:camel-api:4.21.0",
-      "org.apache.camel:camel-base:4.21.0",
-      "org.apache.camel:camel-core-engine:4.21.0",
-      "org.apache.camel:camel-base-engine:4.21.0",
-      "org.apache.camel:camel-core-reifier:4.21.0",
-      "org.apache.camel:camel-core-processor:4.21.0",
-      "org.apache.camel:camel-management-api:4.21.0",
-      "org.apache.camel:camel-support:4.21.0",
-      "org.apache.camel:camel-util-json:4.21.0",
-      "org.apache.camel:camel-xml-jaxp-util:4.21.0",
-      "org.apache.camel:camel-util:4.21.0",
-      "org.apache.camel:camel-core-languages:4.21.0",
-      "org.apache.camel:camel-core-model:4.21.0",
       "org.apache.camel:camel-file:4.21.0",
       "org.apache.camel:camel-direct:4.21.0",
-      "org.apache.camel:camel-cluster:4.21.0",
-      "org.slf4j:slf4j-api:2.0.18",
-      "org.slf4j:slf4j-simple:2.0.18",
-      "jakarta.xml.bind:jakarta.xml.bind-api:4.0.5",
-      "jakarta.activation:jakarta.activation-api:2.1.4"
+      "org.slf4j:slf4j-simple:2.0.18"
     ]
   }
 }

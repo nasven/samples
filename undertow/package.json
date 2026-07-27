@@ -11,20 +11,6 @@
     "nasven": ">=2"
   },
   "dependencies": {
-    "maven": [
-      "io.undertow:undertow-core:2.4.2.Final",
-      "org.jboss.logging:jboss-logging:3.6.2.Final",
-      "org.jboss.xnio:xnio-api:3.8.16.Final",
-      "org.jboss.xnio:xnio-nio:3.8.16.Final",
-      "org.jboss.threads:jboss-threads:3.9.2",
-      "org.wildfly.common:wildfly-common:2.0.1",
-      "org.wildfly.client:wildfly-client-config:1.0.1.Final",
-      "io.smallrye.common:smallrye-common-cpu:2.4.0",
-      "io.smallrye.common:smallrye-common-constraint:2.4.0",
-      "io.smallrye.common:smallrye-common-expression:2.4.0",
-      "io.smallrye.common:smallrye-common-net:2.4.0",
-      "io.smallrye.common:smallrye-common-os:2.4.0",
-      "io.smallrye.common:smallrye-common-ref:2.4.0"
-    ]
+    "maven": ["io.undertow:undertow-core:2.4.2.Final"]
   }
 }

@@ -10,10 +10,6 @@
     "nasven": ">=2"
   },
   "dependencies": {
-    "maven": [
-      "org.apache.commons:commons-csv:1.14.1",
-      "commons-io:commons-io:2.20.0",
-      "commons-codec:commons-codec:1.19.0"
-    ]
+    "maven": ["org.apache.commons:commons-csv:1.14.1"]
   }
 }

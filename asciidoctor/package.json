@@ -10,9 +10,6 @@
     "nasven": ">=2"
   },
   "dependencies": {
-    "maven": [
-      "org.jruby:jruby-complete:9.4.14.0",
-      "org.asciidoctor:asciidoctorj:3.0.1"
-    ]
+    "maven": ["org.asciidoctor:asciidoctorj:3.0.1"]
   }
 }
